@@ -18,3 +18,6 @@ async def handler(event):
   if event.voice != None:
    await client.delete_messages(event.chat_id, [event.id])
    await event.respond('__Сервис голосовых сообщений в данный момент недоступен.__')
+  elif event.text.lower() ==  'привет':
+   await client.send_file(event.chat_id, 'https://neprivet.ru/img/bad-good.png')
+client.run_until_disconnected()
